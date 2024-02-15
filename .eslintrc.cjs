@@ -31,6 +31,9 @@ module.exports = {
     'react/react-in-jsx-scope': [0],
     'require-jsdoc': [0],
     'react/jsx-no-target-blank': [0],
-    'object-curly-spacing': 'always',
+    'object-curly-spacing': [0],
+    'linebreak-style': [0],
+    'indent': ['error', 2],
+    'max-len': ['error', 120],
   },
 };
