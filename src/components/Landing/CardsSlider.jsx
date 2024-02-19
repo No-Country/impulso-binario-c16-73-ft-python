@@ -1,13 +1,43 @@
 import Slider from "react-slick";
 import CardSuggestions from "./CardSuggestions";
+import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
+
+function PrevArrow(props) {
+  const { onClick, currentSlide } = props;
+  return (
+    <>
+      { currentSlide !== 0 &&
+        <div className="arrow prev-arrow" onClick={onClick}>
+          <ArrowBackIcon color="white" fontSize="24px"/>
+        </div>
+      }
+    </>
+  );
+}
+
+function NextArrow(props) {
+  const { onClick, currentSlide, slideCount } = props;
+  return (
+    <>
+      { currentSlide !== slideCount - 3 &&
+        <div className="arrow next-arrow" onClick={onClick}>
+          <ArrowForwardIcon  color="white" fontSize="24px"/>
+        </div>
+      }
+    </>
+  );
+}
 
 const CardsSlider = () => {
   var settings = {
+    className: 'hola',
     infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
     initialSlide: 0,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     responsive: [
       {
         breakpoint: 600,

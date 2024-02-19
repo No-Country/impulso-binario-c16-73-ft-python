@@ -1,74 +1,78 @@
 import { CheckIcon } from "@chakra-ui/icons";
-import { Box, ButtonGroup, Card, CardBody, CardFooter, Flex, Heading, IconButton, Progress, Spacer, Stack } from "@chakra-ui/react";
+import { ButtonGroup, Card, CardBody, CardFooter, Flex, Heading, IconButton, Progress, Spacer, Stack } from "@chakra-ui/react";
 import { Image, Text } from "@chakra-ui/react"
 
 const CardSuggestions = ({ title, image, imageAlt, description, userName }) => {
   return(
-    <Card maxW='md' boxShadow="none">
+    <Card p="0 12px" boxShadow="none">
       <CardBody p="0">
         <Image
           src={image}
           alt={imageAlt}
+          aspectRatio="16/9"
+          objectFit="cover"
         />
-        <Stack px="4" py="3" spacing='3'>
-          <Heading size='lg' color="#333333">{title}</Heading>
-          <Text fontSize='xl' lineHeight="1.2" fontWeight="500" color="#333333">
+        <Stack p="3" spacing='3'>
+          <Heading size='md' color="#333333">{title}</Heading>
+          <Text fontSize='lg' lineHeight="1.2" fontWeight="500" color="#333333">
             {description}
           </Text>
           <Text fontSize='lg' fontWeight="400" as="i" color="#333333">
             {userName}
           </Text>
         </Stack>
-        <Stack px="4" spacing="2">
-          <Flex>
+        <Stack px="3" spacing="2">
+          <Flex alignItems="flex-end">
             <Text fontSize="xl" fontWeight="500" lineHeight="1.2">
               $450
             </Text>
             <Spacer/>
-            <Text fontSize="xl" fontWeight="500" lineHeight="1.2">
+            <Text fontSize="md" fontWeight="400" lineHeight="1.2" as="i" color="#007bff">
               60%
             </Text>
           </Flex>
           <Progress
+            colorScheme="messenger"
+            border="1px solid #007bff"
             borderRadius="lg"
-            background="#f2f2f2"
-            size="lg"
+            background="#ffffff"
+            size="sm"
             value={60}
           />
-          <Text fontSize="sm" as="i" color="#333333" >
+          <Text fontSize="md" fontWeight="400" as="i" color="#333333" >
             Tiempo de expiración
           </Text>
         </Stack>
       </CardBody>
-      <CardFooter p="4">
+      <CardFooter px="3" py="2">
         <ButtonGroup spacing='2'>
           <IconButton
             size="xs"
             isRound={true}
             variant="transparent"
             fontSize='16px'
-            icon={<CheckIcon />}
+            icon={<CheckIcon color="#007bff"/>}
           />
           <IconButton
             size="xs"
             isRound={true}
             variant="transparent"
             fontSize='16px'
-            icon={<CheckIcon />}
+            icon={<CheckIcon color="#007bff"/>}
           />
           <IconButton
             size="xs"
             isRound={true}
             variant="transparent"
             fontSize='16px'
-            icon={<CheckIcon />}
+            icon={<CheckIcon color="#007bff"/>}
           />
           <IconButton
             size="xs"
             isRound={true}
             variant="transparent"
             fontSize='16px'
-            icon={<CheckIcon />}
+            icon={<CheckIcon color="#007bff"/>}
           />
         </ButtonGroup>
       </CardFooter>
