@@ -1,13 +1,17 @@
 import IntroSection from '../components/Landing/IntroSection/IntroSection';
-import Highlights from '../components/Landing/HighlightsSection/HighlightsSection';
-import Carousels from '../components/Landing/CarouselSection/CarouselSection';
+import HighlightsSection from '../components/Landing/HighlightsSection/HighlightsSection';
+import CarouselSection from '../components/Landing/CarouselSection/CarouselSection';
+import Suggestions from '../components/Landing/Suggestions';
+import Footer from '../components/Footer/Footer';
 
 const Landing = () => {
   return (
     <>
       <IntroSection />
-      <Highlights />
-      <Carousels />
+      <HighlightsSection />
+      <CarouselSection />
+      <Suggestions />
+      <Footer />
     </>
   );
 };
