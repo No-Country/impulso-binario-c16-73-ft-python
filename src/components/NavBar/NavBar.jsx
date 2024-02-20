@@ -10,12 +10,13 @@ const NavBar = () => {
       pr={['30px', '30px', '60px']}
       alignItems={'center'}>
       <HStack spacing={'40px'}>
-        <Link to={'/about'} as={ReactLink}>
+        <Link color={'#4D94FF'} to={'/about'} as={ReactLink}>
           Nosotros
         </Link>
         <Button
+          color={'#007BFF'}
           bgColor={'white'}
-          border={'1px'}
+          border={'2px'}
           borderRadius={63}
           _hover={{ backgroundColor: 'white' }}>
           <Link to={'/project/create'} as={ReactLink}>
@@ -23,15 +24,16 @@ const NavBar = () => {
           </Link>
         </Button>
       </HStack>
-      <Heading mx="auto">
-        <Link as={ReactLink} to={'/'}>
+      <Heading color={'#007BFF'} mx="auto">
+        <ReactLink textDecoration={'none'} to={'/'}>
           Impulso Binario
-        </Link>
+        </ReactLink>
       </Heading>
       <HStack spacing={'40px'}>
         <Button
+          color={'#007BFF'}
           bgColor={'white'}
-          border={'1px'}
+          border={'2px'}
           borderRadius={63}
           _hover={{ backgroundColor: 'white' }}>
           <Link to={'/home'} as={ReactLink}>
@@ -39,16 +41,16 @@ const NavBar = () => {
           </Link>
         </Button>
         <Button
-          bgColor={'black'}
+          bgColor={'#007BFF'}
           color={'white'}
           border={'1px'}
           borderRadius={63}
-          _hover={{ backgroundColor: 'black' }}>
+          _hover={{ backgroundColor: '#007BFF' }}>
           <Link to={'/register'} as={ReactLink}>
             Registrarme
           </Link>
         </Button>
-        <Link to={'/login'} as={ReactLink}>
+        <Link color={'#4D94FF'} to={'/login'} as={ReactLink}>
           Ingresar
         </Link>
       </HStack>
