@@ -37,21 +37,25 @@ const Carousel = ({ items, numItems, carouselType }) => {
     setCurrentItems(slicedArray);
   }, [currentIndex]);
   return (
-    <Flex>
+    <Flex _hover={{ '.carousel-btn': { visibility: 'visible' } }}>
       <Box
+        className={'carousel-btn'}
+        visibility={'hidden'}
         position='relative'
         display={'flex'}
-        justifyContent={'center'}>
+        justifyContent={'center'}
+        transition={'visibility 0.3s ease-in-out'}>
         <Button
           position='absolute'
-          top='50%'
-          left='10'
+          top={'50%'}
+          left={'10'}
           h={'54px'}
           w={'54px'}
           transform='translateY(-50%)'
-          bgColor={'black'}
+          bgColor={'#007BFF'}
           borderRadius={100}
-          _hover={{ backgroundColor: 'black' }}
+          _hover={{ backgroundColor: '#007BFF' }}
+          zIndex={2}
           onClick={goToPrevious}>
           <Icon color={'white'} as={ArrowBackIcon}/>
         </Button>
@@ -62,36 +66,46 @@ const Carousel = ({ items, numItems, carouselType }) => {
         justifyContent={'center'}>
         { carouselType === 'images' && currentItems.map((p, i) => (
           <Image
-            w={'33%'}
+            w={'33.33%'}
             objectFit={'fill'}
             key={i}
             src={p}
+            transition={'transform 0.3s ease-in-out'}
+            _hover={{ transform: 'scale(1.1)' }}
           />
         )) }
         { carouselType === 'reviews' && currentItems.map((p, i) => (
-          <Center w={'100%'} bgColor={'transparent'} textAlign={'center'} key={i}>
-            <Flex maxW={'50%'} flexDir={'column'} >
-              <Heading fontWeight={'200'}>{p.user}</Heading>
-              <Heading>{p.comment}</Heading>
+          <Center w={'100%'} bgColor={'#0051A9'} textAlign={'center'} key={i}>
+            <Flex
+              transition={'transform 0.3s ease-in-out'}
+              _hover={{ transform: 'scale(1.1)' }}
+              maxW={'50%'}
+              flexDir={'column'} >
+              <Heading color={'#ffffff'} fontWeight={'200'}>{p.user}</Heading>
+              <Heading color={'#ffffff'}>{p.comment}</Heading>
             </Flex>
           </Center>
         )) }
       </Flex>
       <Box
-        position='relative'
+        className={'carousel-btn'}
+        visibility={'hidden'}
+        position={'relative'}
         display={'flex'}
-        justifyContent={'center'}>
+        justifyContent={'center'}
+        transition={'visibility 0.3s ease-in-out'}>
         <Button
           position='absolute'
-          top='50%'
-          right='10'
+          top={'50%'}
+          right={'10'}
           h={'54px'}
           w={'54px'}
           transform='translateY(-50%)'
           onClick={goToNext}
-          bgColor={'black'}
+          bgColor={'#007BFF'}
           borderRadius={100}
-          _hover={{ backgroundColor: 'black' }}>
+          zIndex={2}
+          _hover={{ backgroundColor: '#007BFF' }}>
           <Icon color={'white'} as={ArrowForwardIcon}/>
         </Button>
       </Box>
