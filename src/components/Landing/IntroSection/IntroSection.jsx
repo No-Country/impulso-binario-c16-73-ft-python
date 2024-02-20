@@ -1,13 +1,13 @@
 import { Image, Button, Heading, Grid, GridItem, Link, Icon, Center } from '@chakra-ui/react';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import { Link as ReactLink } from 'react-router-dom';
-import IntroImage from '../../assets/introImage.jpeg';
+import IntroImage from '../../../assets/introImage.jpeg';
 
 const IntroSection = () => {
   return (
     <Grid
       templateRows={'0.9fr 0.1fr'}
-      templateColumns={'1fr 1fr'}
+      templateColumns={'1fr 1.28fr'}
       width={'100%'}>
       <GridItem
         colStart={1}
@@ -15,13 +15,13 @@ const IntroSection = () => {
         rowStart={1}
         rowEnd={1}>
         <Center width={'100%'}
-          p='10px'
+          px='50px'
           h={'100%'}>
           <Heading
-            textAlign={'center'}>
-          Queremos facilitar la conexión entre inversores interesados en respaldar
-          iniciativas digitales y los emprendedores que buscan financiación
-          para sus proyectos.
+            color={'#333333'}
+            size={'4xl'}
+            textAlign={'left'}>
+          Conéctate con innovación: Descubre y respalda proyectos digitales hoy
           </Heading>
         </Center>
       </GridItem>
@@ -33,7 +33,8 @@ const IntroSection = () => {
         <Button
           ml={'30px'}
           bgColor={'white'}
-          border={'1px'}
+          color={'#4D94FF'}
+          border={'2px'}
           borderRadius={63}
           _hover={{ backgroundColor: 'white' }}>
           <Link as={ReactLink}>
