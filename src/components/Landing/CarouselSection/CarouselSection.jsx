@@ -1,3 +1,6 @@
+import { Flex, Heading, Button, Link, Icon } from '@chakra-ui/react';
+import { Link as ReactLink } from 'react-router-dom';
+import { ArrowForwardIcon } from '@chakra-ui/icons';
 import Carousel from '../../Carousel/Carousel';
 
 const images = [
@@ -15,10 +18,21 @@ const reviews = [
 
 const Carousels = () => {
   return (
-    <>
+    <Flex flexDir={'column'}>
+      <Flex p={'20px'}>
+        <Heading color={'#333333'}>Proyectos</Heading>
+        <Link
+          as={ReactLink}
+          ml={'auto'}
+          bgColor={'white'}
+          alignSelf={'center'}
+          color={'#007BFF'}>
+          {<Icon as={ArrowForwardIcon}/>} Ver todos
+        </Link>
+      </Flex>
       <Carousel items={images} carouselType={'images'} numItems={3}/>
       <Carousel items={reviews} carouselType={'reviews'} numItems={1}/>
-    </>
+    </Flex>
   );
 };
 
