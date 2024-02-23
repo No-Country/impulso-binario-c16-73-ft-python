@@ -1,159 +1,196 @@
 import { CheckIcon } from '@chakra-ui/icons'
-import { Button, ButtonGroup, Container, Divider, Flex, Grid, GridItem, HStack, Heading, IconButton, Image, Progress, Stack, Tab, TabIndicator, TabList, TabPanel, TabPanels, Tabs, Text } from '@chakra-ui/react'
-import React from 'react'
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button,
+  ButtonGroup,
+  Container,
+  Divider,
+  Flex,
+  Grid,
+  GridItem,
+  HStack,
+  Heading,
+  IconButton,
+  Image,
+  Progress,
+  Stack,
+  Tab,
+  TabIndicator,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Text,
+} from '@chakra-ui/react';
+import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import data from '../utils/projects.json';
 
 function ProjectDetail() {
+  const [project, setProject] = useState({});
+  const { id } = useParams();
+  useEffect(() => {
+    setProject(data.find((d) => d.id === parseInt(id)));
+  }, []);
+  console.log(project)
   return (
     <>
-      <Container maxW="none" p="0">
+      <Container maxW='none' p='0'>
         <Image
-          src={"https://t4.ftcdn.net/jpg/05/54/46/89/360_F_554468927_iwU3VYIjsaeopAb0WPYxVf21TloEhTEj.jpg"}
-          alt={"banner-image"}
-          w="100%"
-          aspectRatio="5/1"
-          objectFit="cover"
+          src={'https://t4.ftcdn.net/jpg/05/54/46/89/360_F_554468927_iwU3VYIjsaeopAb0WPYxVf21TloEhTEj.jpg'}
+          alt={'banner-image'}
+          w='100%'
+          aspectRatio='5/1'
+          objectFit='cover'
         />
       </Container>
-      <Container maxW="none" px="75px">
-        <Text as="h3" size="sm" fontStyle="italic" fontWeight="400" pt="10" pb="5">
-          Home/Project1
-        </Text>
-        <Grid templateColumns="1fr 1fr" gap="5">
+      <Container maxW='none' px='75px'>
+        <Breadcrumb my='25px'>
+          <BreadcrumbItem>
+            <BreadcrumbLink as={Link} to='/home'>
+              Home
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <BreadcrumbLink>
+              {project.title}
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+        </Breadcrumb>
+        <Grid templateColumns='1fr 1fr' gap='5'>
           <GridItem>
             <Image
-              src={"https://www.homecareinsight.co.uk/2020/07/connected-technology.jpg"}
-              alt={"project-image"}
-              w="100%"
-              aspectRatio="4/3"
-              objectFit="cover"
+              src={project.mainImage}
+              alt={'project-image'}
+              w='100%'
+              aspectRatio='4/3'
+              objectFit='contain'
             />
           </GridItem>
-          <GridItem display="grid" gridTemplateRows="auto 1fr" gap="14">
-            <Stack spacing="4">
-              <Text as="h3" fontSize="2xl" lineHeight="1">
-                {"Categoría"}
+          <GridItem display='grid' gridTemplateRows='auto 1fr' gap='14'>
+            <Stack spacing='4'>
+              <Text as='h3' fontSize='2xl' lineHeight='1'>
+                {'Categoría'}
               </Text>
-              <Heading as="h2" fontWeight="500">
-                {"Project 1"}
+              <Heading as='h2' fontWeight='500'>
+                {'Project 1'}
               </Heading>
               <Flex>
                 <Image
-                  src={"https://cdn-icons-png.flaticon.com/512/3177/3177440.png"}
-                  w="25px"
+                  src={'https://cdn-icons-png.flaticon.com/512/3177/3177440.png'}
+                  w='25px'
                 />
-                <Text ml="3" fontWeight="400" fontStyle="italic">
-                  {"Usuario creador"}
+                <Text ml='3' fontWeight='400' fontStyle='italic'>
+                  {project.user?.name}
                 </Text>
               </Flex>
             </Stack>
-            <Stack justifyContent="space-between">
-              <Stack spacing="3.5">
-                <Flex justifyContent="space-between" alignItems="flex-end">
-                  <Text fontSize="3xl" fontWeight="500">
-                    {"$2323"}
+            <Stack justifyContent='space-between'>
+              <Stack spacing='3.5'>
+                <Flex justifyContent='space-between' alignItems='flex-end'>
+                  <Text fontSize='3xl' fontWeight='500'>
+                    ${project.amountCollected}
                   </Text>
-                  <Text fontSize="xl" fontStyle="italic">
-                    {"N° de patrocinadores"}
+                  <Text fontSize='xl' fontStyle='italic'>
+                    {'N° de patrocinadores'}
                   </Text>
                 </Flex>
                 <Progress
-                  colorScheme="messenger"
-                  border="1px solid #007bff"
-                  borderRadius="lg"
-                  background="#ffffff"
-                  size="sm"
-                  value={60}
+                  colorScheme='messenger'
+                  border='1px solid #007bff'
+                  borderRadius='lg'
+                  background='#ffffff'
+                  size='sm'
+                  value={project.progress}
                 />
-                <Flex justifyContent="space-between">
-                  <Text fontSize="xl" fontStyle="italic">
-                    {"60%"}
+                <Flex justifyContent='space-between'>
+                  <Text fontSize='xl' fontStyle='italic'>
+                    {'60%'}
                   </Text>
-                  <Text fontSize="xl" fontStyle="italic">
-                    {"Tiempo de expiración"}
+                  <Text fontSize='xl' fontStyle='italic'>
+                    Quedan {project.expirationDate}
                   </Text>
                 </Flex>
                 <Button
-                  bg="#333333"
-                  _hover={{ bg: "#484848" }}
-                  color="#ffffff"
-                  borderRadius="full"
-                  size="lg"
-                  fontSize="xl"
-                  fontWeight="400">
+                  bg='#333333'
+                  _hover={{ bg: '#484848' }}
+                  color='#ffffff'
+                  borderRadius='full'
+                  size='lg'
+                  fontSize='xl'
+                  fontWeight='400'>
                   Patrocinar este proyecto
                 </Button>
               </Stack>
-              <HStack mt="auto" spacing="4">
+              <HStack mt='auto' spacing='4'>
                 <Button
-                  px="8"
-                  size="lg"
-                  bgColor="#ffffff"
-                  border="2px solid #333333"
-                  borderRadius="full"
-                  fontSize="xl"
-                  fontWeight="500"
+                  px='8'
+                  size='lg'
+                  bgColor='#ffffff'
+                  border='2px solid #333333'
+                  borderRadius='full'
+                  fontSize='xl'
+                  fontWeight='500'
                   leftIcon={<CheckIcon />}>
                   Guardar
                 </Button>
                 <ButtonGroup spacing='2'>
                   <IconButton
-                    size="xs"
+                    size='xs'
                     isRound={true}
-                    variant="transparent"
+                    variant='transparent'
                     fontSize='16px'
-                    icon={<CheckIcon color="#333333"/>}
+                    icon={<CheckIcon color='#333333'/>}
                   />
                   <IconButton
-                    size="xs"
+                    size='xs'
                     isRound={true}
-                    variant="transparent"
+                    variant='transparent'
                     fontSize='16px'
-                    icon={<CheckIcon color="#333333"/>}
+                    icon={<CheckIcon color='#333333'/>}
                   />
                   <IconButton
-                    size="xs"
+                    size='xs'
                     isRound={true}
-                    variant="transparent"
+                    variant='transparent'
                     fontSize='16px'
-                    icon={<CheckIcon color="#333333"/>}
+                    icon={<CheckIcon color='#333333'/>}
                   />
                   <IconButton
-                    size="xs"
+                    size='xs'
                     isRound={true}
-                    variant="transparent"
+                    variant='transparent'
                     fontSize='16px'
-                    icon={<CheckIcon color="#333333"/>}
+                    icon={<CheckIcon color='#333333'/>}
                   />
                 </ButtonGroup>
               </HStack>
             </Stack>
           </GridItem>
         </Grid>
-        <HStack mt="4">
+        <HStack mt='4'>
           <IconButton
-            size="xs"
+            size='xs'
             isRound={true}
-            variant="transparent"
+            variant='transparent'
             fontSize='16px'
-            icon={<CheckIcon color="#333333"/>}
+            icon={<CheckIcon color='#333333'/>}
           />
-          <Text fontSize="lg" fontStyle="italic">
-            {"Ubicación geografica"}
+          <Text fontSize='lg' fontStyle='italic'>
+            {'Ubicación geografica'}
           </Text>
         </HStack>
       </Container>
-      <Divider w="auto" mx="75px" my="8" borderColor="#333333" />
-      <Tabs px="75px" variant="unstyled">
-        <TabList gap="4">
-          <Tab fontSize="lg" px="9">Campaña</Tab>
-          <Tab fontSize="lg" px="9">Recompensas</Tab>
-          <Tab fontSize="lg" px="9">Preguntas frecuentes</Tab>
-          <Tab fontSize="lg" px="9">Comentarios</Tab>
+      <Divider w='auto' mx='75px' my='8' borderColor='#333333' />
+      <Tabs px='75px' variant='unstyled'>
+        <TabList gap='4'>
+          <Tab fontSize='lg' px='9'>Campaña</Tab>
+          <Tab fontSize='lg' px='9'>Recompensas</Tab>
+          <Tab fontSize='lg' px='9'>Preguntas frecuentes</Tab>
+          <Tab fontSize='lg' px='9'>Comentarios</Tab>
         </TabList>
         <TabIndicator
-          mt="-1.5px"
-          height="3px"
-          bg="#007BFF"
+          mt='-1.5px'
+          height='3px'
+          bg='#007BFF'
         />
         <TabPanels>
           <TabPanel>
