@@ -37,7 +37,7 @@ const IntroSection = () => {
           border={'2px'}
           borderRadius={63}
           _hover={{ backgroundColor: 'white' }}>
-          <Link to={'/home'} as={ReactLink}>
+          <Link as={ReactLink}>
             {<Icon as={ArrowForwardIcon}/>} Explorar Proyectos
           </Link>
         </Button>
