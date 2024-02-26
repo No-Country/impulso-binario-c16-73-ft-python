@@ -45,7 +45,7 @@ const IntroSection = () => {
       <GridItem
         colStart={2}
         rowSpan={2}>
-        <Image h={'auto'} w={'100%'} objectFit={'cover'} alt="Intro Image" src={IntroImage}/>
+        <Image h={'auto'} w={'100%'} objectFit={'cover'} alt="Intro Image" src={'https://img.freepik.com/foto-gratis/primer-plano-mano-presionando-pantalla_53876-101866.jpg?w=2000&t=st=1708729948~exp=1708730548~hmac=89191ca2dce66db6b10c6fc0338d587d6e66f0b7dabbde6aba1abdf5fd11da78'}/>
       </GridItem>
     </Grid>
   );

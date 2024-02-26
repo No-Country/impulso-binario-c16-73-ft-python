@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import CardSuggestions from "./CardSuggestions";
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
+import data from '../../utils/projects.json';
 
 function PrevArrow(props) {
   const { onClick, currentSlide } = props;
@@ -59,15 +60,15 @@ const CardsSlider = () => {
   return (
     <div className="slider-container">
       <Slider {...settings}>
-        {[1,2,3,4,5,6].map(card => {
+        {data.slice(2, 6).map(card => {
           return(
             <CardSuggestions
               key={card}
-              title="Movie Site"
-              image="https://images.ctfassets.net/4cd45et68cgf/5y7i4snzpqkr2oHRCRAkN4/3f386378a409fec422ba26eb7e52112f/Android_Collage_1920x1080_Vietnam_Vi.jpg"
+              title={card.title}
+              image={card.mainImage}
               imageAlt="Netflix image"
-              description="Netflix is a subscription-based streaming service that allows our members to watch TV shows and movies."
-              userName="Netflix"
+              description={card.description}
+              userName={card.user.name}
             />
           )
         })}

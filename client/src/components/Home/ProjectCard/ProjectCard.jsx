@@ -37,7 +37,7 @@ const ProjectCard = ({
           </Stack>
           <Stack p="3" spacing='3'>
             <Heading size='md' color="#333333">
-              <LinkOverlay as={Link} to={`/project/${id}`}> {title} </LinkOverlay>
+              <LinkOverlay as={Link} to={`/detail/${id}`}> {title} </LinkOverlay>
             </Heading>
             <Text noOfLines={2} fontSize='lg' lineHeight="1.2" fontWeight="500" color="#333333">
               {description}

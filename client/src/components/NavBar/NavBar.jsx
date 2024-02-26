@@ -4,11 +4,18 @@ import { Link as ReactLink } from 'react-router-dom';
 const NavBar = () => {
   return (
     <Flex
-      h={'80px'}
-      w={'100%'}
+      position="fixed"
+      top="0"
+      left="0"
+      right="0"
+      h="80px"
+      w="100%"
       pl={['30px', '30px', '60px']}
       pr={['30px', '30px', '60px']}
-      alignItems={'center'}>
+      alignItems={'center'}
+      zIndex="200"
+      bg="white"
+    >
       <HStack spacing={'40px'}>
         <Link color={'#4D94FF'} to={'/about'} as={ReactLink}>
           Nosotros
