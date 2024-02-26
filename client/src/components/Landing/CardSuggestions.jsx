@@ -4,13 +4,14 @@ import { Image, Text } from "@chakra-ui/react"
 
 const CardSuggestions = ({ title, image, imageAlt, description, userName }) => {
   return(
-    <Card p="0 12px" boxShadow="none">
+    <Card h={'573px'} p="0 12px" boxShadow="none">
       <CardBody p="0">
         <Image
           src={image}
           alt={imageAlt}
+          maxH={'309px'}
           aspectRatio="16/9"
-          objectFit="cover"
+          objectFit="contain"
         />
         <Stack p="3" spacing='3'>
           <Heading size='md' color="#333333">{title}</Heading>

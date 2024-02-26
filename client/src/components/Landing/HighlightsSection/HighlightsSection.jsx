@@ -2,8 +2,8 @@ import { Flex, Grid, GridItem, Heading, Image, Link, Icon, Center } from '@chakr
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import { Link as ReactLink } from 'react-router-dom';
 
-const link1 = 'https://d1wrxu8gicsgam.cloudfront.net/wp-content/files/django-logo-big.jpg';
-const link2 = 'https://miro.medium.com/v2/resize:fit:796/1*pYSuCdXwGakuRMhRue5fVA.png';
+const link1 = 'https://img.freepik.com/foto-gratis/dispositivo-sujecion-hombre-tiro-medio_23-2149126943.jpg?w=1800&t=st=1708730025~exp=1708730625~hmac=40742497119bc74fda8953fe7b3eb341bc9690471def495a13e062e4d2fa1394';
+const link2 = 'https://img.freepik.com/foto-gratis/alegre-empresaria-laptop-mirando-presentacion-virtual_74855-1514.jpg?w=1800&t=st=1708730126~exp=1708730726~hmac=6e94ba31c0c38f4d8bd658e40fae2e8946d75462d5ac3d8026baedcf05ebcbe3';
 
 const Highlights = () => {
   return (
@@ -29,6 +29,8 @@ const Highlights = () => {
             w={'100%'}
             h={'100%'}
             objectFit={'cover'}
+            borderRadius={'0px 0px 100px 0px'}
+            boxShadow="2xl"
             alt={'HighlightImage 1'}/>
         </GridItem>
         <GridItem
@@ -75,12 +77,14 @@ const Highlights = () => {
           bgColor={'#D9D9D9'}
           as={Center}
           h={'100%'}
-          borderRadius={'0px 0px 0px 100px'}>
+          borderRadius={'100px 0px 0px 0px'}>
           <Image
             src={link2}
             w={'100%'}
             h={'100%'}
             objectFit={'cover'}
+            borderRadius={'100px 0px 0px 0px'}
+            boxShadow="2xl"
             alt={'HighlightImage 2'}/>
         </GridItem>
       </Grid>

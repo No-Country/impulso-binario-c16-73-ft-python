@@ -29,6 +29,9 @@ function ProjectDetail() {
   const { id } = useParams();
   useEffect(() => {
     setProject(data.find((d) => d.id === parseInt(id)));
+    return () => {
+      setProject({});
+    }
   }, []);
   console.log(project)
   return (
@@ -71,7 +74,7 @@ function ProjectDetail() {
                 {'Categoría'}
               </Text>
               <Heading as='h2' fontWeight='500'>
-                {'Project 1'}
+                {project.title}
               </Heading>
               <Flex>
                 <Image
@@ -103,7 +106,7 @@ function ProjectDetail() {
                 />
                 <Flex justifyContent='space-between'>
                   <Text fontSize='xl' fontStyle='italic'>
-                    {'60%'}
+                    {project.progress}%
                   </Text>
                   <Text fontSize='xl' fontStyle='italic'>
                     Quedan {project.expirationDate}
