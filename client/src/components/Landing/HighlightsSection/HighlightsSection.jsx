@@ -7,39 +7,37 @@ const link2 = 'https://img.freepik.com/foto-gratis/alegre-empresaria-laptop-mira
 
 const Highlights = () => {
   return (
-    <Flex flexDirection={'column'} w={'100%'}>
-      <Heading color={'#333333'} p='20px'>
+    <Flex flexDirection={'column'} w={'100%'} mt='8'>
+      <Heading color={'#333333'} px='30px' py='8'>
         Proyectos destacados
       </Heading>
       <Grid
         templateColumns={'1fr 1fr'}
         templateRows={'1fr 1fr'}
-        minH='620px'>
+        minH='620px'
+        rowGap='7'>
         <GridItem
           colStart={1}
           colEnd={1}
           rowStart={1}
           rowEnd={1}
-          bgColor={'black'}
           borderRadius={'0px 0px 100px 0px'}
           as={Center}
           h={'100%'}>
           <Image
             src={link1}
             w={'100%'}
-            h={'100%'}
-            objectFit={'cover'}
+            boxShadow={'xl'}
+            aspectRatio={'3/2'}
             borderRadius={'0px 0px 100px 0px'}
-            boxShadow="2xl"
             alt={'HighlightImage 1'}/>
         </GridItem>
         <GridItem
           colStart={2}
           colEnd={2}
           rowStart={1}
-          rowEnd={1}
-          p={'10px'}>
-          <Flex flexDir={'column'} height={'100%'} gap={5}>
+          rowEnd={1}>
+          <Flex flexDir={'column'} height={'100%'} px={'7'} py={'2.5'} gap={3}>
             <Heading color={'#333333'} size={'xl'}>Svelte</Heading>
             <Heading color={'#007BFF'} fontWeight={'500'} size={'md'}>67% Financiado</Heading>
             <Heading fontWeight={'normal'} size={'md'} fontStyle={'italic'}>Por: Jane Doe</Heading>
@@ -55,9 +53,8 @@ const Highlights = () => {
           colStart={1}
           colEnd={1}
           rowStart={2}
-          rowEnd={2}
-          p={'10px'}>
-          <Flex flexDir={'column'} height={'100%'} gap={5}>
+          rowEnd={2}>
+          <Flex flexDir={'column'} height={'100%'} px={'7'} py={'2.5'} gap={5}>
             <Heading color={'#333333'} size={'xl'}>Django Framework</Heading>
             <Heading color={'#007BFF'} fontWeight={'500'} size={'md'}>86% Financiado</Heading>
             <Heading fontWeight={'normal'} size={'md'} fontStyle={'italic'}>Por: John Doe</Heading>
@@ -74,21 +71,18 @@ const Highlights = () => {
           colEnd={2}
           rowStart={2}
           rowEnd={2}
-          bgColor={'#D9D9D9'}
           as={Center}
           h={'100%'}
           borderRadius={'100px 0px 0px 0px'}>
           <Image
             src={link2}
             w={'100%'}
-            h={'100%'}
-            objectFit={'cover'}
+            boxShadow={'xl'}
+            aspectRatio={'3/2'}
             borderRadius={'100px 0px 0px 0px'}
-            boxShadow="2xl"
             alt={'HighlightImage 2'}/>
         </GridItem>
       </Grid>
-
     </Flex>
   );
 };

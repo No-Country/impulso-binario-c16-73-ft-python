@@ -3,7 +3,6 @@ import Landing from './pages/Landing';
 import Home from './pages/Home';
 import NavBar from './components/NavBar/NavBar';
 import ProjectDetail from './pages/ProjectDetail';
-import './App.css';
 
 function App() {
   return (

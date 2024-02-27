@@ -1,0 +1,21 @@
+.reviews-slider{
+  .slick-slider{
+    overflow: hidden;
+    .slick-list{
+      height: 100%;
+      .slick-track{
+        height: 100%;
+        .slick-slide > div{
+          height: 100%;
+        }
+      }
+    }
+    .slick-dots ul .slick-active > div{
+      background: #ffffff;
+    }
+  }
+}
+
+.reviews-slider:hover .slick-slider .arrow-button{
+  visibility: visible;
+}

@@ -4,7 +4,7 @@ import { Link as ReactLink } from 'react-router-dom';
 const NavBar = () => {
   return (
     <Flex
-      position="fixed"
+      position="sticky"
       top="0"
       left="0"
       right="0"
@@ -15,6 +15,7 @@ const NavBar = () => {
       alignItems={'center'}
       zIndex="200"
       bg="white"
+      boxShadow="lg"
     >
       <HStack spacing={'40px'}>
         <Link color={'#4D94FF'} to={'/about'} as={ReactLink}>

@@ -6,21 +6,31 @@ function Footer() {
       <Divider my="8" opacity="0.8"/>
       <Grid templateColumns="1fr 1fr">
         <GridItem>
-          <Stack>
-            <Text fontSize="lg" pl="16px">
+          <Stack color={'#007BFF'}>
+            <Text fontSize="lg" pl="4">
               Mantente al día
             </Text>
-            <InputGroup size="md" w="md" border="1px solid #333333" borderRadius="full" overflow="hidden">
-              <Input placeholder="impulsobinario@gmail.com" border="none" boxShadow="none !important"/>
-              <InputRightAddon children="Suscríbete" border="none" fontSize="lg" background="none"/>
+            <InputGroup size="md" w="md" border="1px solid #007BFF" borderRadius="full" overflow="hidden">
+              <Input
+                placeholder="impulsobinario@gmail.com"
+                border="none"
+                boxShadow="none !important"
+              />
+              <InputRightAddon
+                children="Suscríbete"
+                border="none"
+                fontSize="lg"
+                background="none"
+                cursor="pointer"
+              />
             </InputGroup>
-            <Text fontSize="lg" pl="16px">
+            <Text fontSize="lg" pl="4">
               Suscríbete para recibir novedades al instante
             </Text>
           </Stack>
         </GridItem>
         <GridItem>
-          <Flex justifyContent="space-around">
+          <Flex justifyContent="space-around" color={'#007BFF'}>
             <List>
               <ListItem fontSize="2xl" fontWeight="500">
                 Soporte
@@ -46,7 +56,7 @@ function Footer() {
           </Flex>
         </GridItem>
       </Grid>
-      <Flex justifyContent="space-between" mt="24">
+      <Flex justifyContent="space-between" mt="24" color={'#007BFF'}>
         <Text>
           Impulso binario 2024
         </Text>

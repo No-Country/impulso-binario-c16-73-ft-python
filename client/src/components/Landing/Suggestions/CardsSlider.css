@@ -1,0 +1,26 @@
+.slick-slider{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  .slick-list{
+    overflow: hidden;
+    .slick-track{
+      display: flex;
+    }
+  }
+}
+
+
+.cards-slider {
+  .slick-slider{
+    .slick-list{
+      margin: 0 -12px;
+    }
+  }
+}
+
+.cards-slider:hover .slick-slider .arrow-button{
+  visibility: visible;
+}
