@@ -15,7 +15,19 @@ db = db_session()
 @api.get('/project')
 async def get_project_all() -> list[dict]:
     try:
-        data = ProjectModel.get_all_project(db)
-        return jsonable_encoder(data)
+        total_data = ProjectModel.get_all_project(db)
+
+        list_data = [
+            {
+            "usuario": data.name,
+            "titulo_proyecto": data.project_name,
+            "descripcion": data.description,
+            "total_inversion": data.budget_amount,
+            "recaudado": "25%"
+            }
+            for data in total_data
+        ]
+
+        return list_data
     except Exception as e:
         raise e
