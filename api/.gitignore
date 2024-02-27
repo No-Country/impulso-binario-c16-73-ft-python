@@ -1,2 +1,4 @@
 .env
 .idea/
+app/controllers/__pycache__/
+app/models/__pycache__/

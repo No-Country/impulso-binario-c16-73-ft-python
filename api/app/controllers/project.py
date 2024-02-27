@@ -22,11 +22,13 @@ async def get_project_all() -> list[dict]:
 
         list_data = [
             {
+            "id": data.id,
             "usuario": data.name,
             "titulo_proyecto": data.project_name,
             "descripcion": data.description,
             "total_inversion": data.budget_amount,
-            "recaudado": "25%"
+            "recaudado": "25%",
+            "fecha_expiracion": 15
             }
             for data in total_data
         ]
