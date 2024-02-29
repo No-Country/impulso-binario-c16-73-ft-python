@@ -2,7 +2,7 @@ import { Container, Divider, Flex, Grid, GridItem, Input, InputGroup, InputRight
 
 function Footer() {
   return (
-    <Container maxW="none" p="0 30px" mt="24" mb="6">
+    <Container maxW="none" p="0 30px" mt="24" mb="3">
       <Divider my="8" opacity="0.8"/>
       <Grid templateColumns="1fr 1fr">
         <GridItem>
