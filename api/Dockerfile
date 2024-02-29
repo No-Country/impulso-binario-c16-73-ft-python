@@ -11,7 +11,7 @@ COPY ./app /app
 RUN apk update && apk add --no-cache gcc g++ libc-dev libffi-dev musl-dev
 RUN apk add --no-cache postgresql-client
 
-RUN pip install --no-cache-dir -r /app/requirements.txt  # Instalar los requisitos desde el archivo requirements.txt
+RUN pip install -r ./requirements.txt
 
 EXPOSE 8000
 

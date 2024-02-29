@@ -16,4 +16,5 @@ class ProjectModel(Base):
 
     @classmethod
     def get_all_project(cls, session):
-        return session.query(cls).all()
+        return (session.query(cls.id, cls.name.label('project_name'), cls.description, cls.budget_amount,
+                              UserModel.name).join(UserModel).all())
