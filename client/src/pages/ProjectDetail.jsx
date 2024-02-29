@@ -33,7 +33,6 @@ function ProjectDetail() {
       setProject({});
     }
   }, []);
-  console.log(project)
   return (
     <>
       <Container maxW='none' p='0'>
@@ -112,6 +111,7 @@ function ProjectDetail() {
                     Quedan {project.expirationDate}
                   </Text>
                 </Flex>
+                <Link to={`/project/${project.id}/rewards`}>
                 <Button
                   bg='#333333'
                   _hover={{ bg: '#484848' }}
@@ -120,8 +120,9 @@ function ProjectDetail() {
                   size='lg'
                   fontSize='xl'
                   fontWeight='400'>
-                  Patrocinar este proyecto
+                    Patrocinar este proyecto
                 </Button>
+                  </Link>
               </Stack>
               <HStack mt='auto' spacing='4'>
                 <Button
