@@ -5,7 +5,6 @@ import NavBar from './components/NavBar/NavBar';
 import ProjectDetail from './pages/ProjectDetail';
 import Rewards from './pages/Rewards';
 import { ProjectProvider } from './context/ProjectContext';
-import './App.css';
 
 function App() {
   return (

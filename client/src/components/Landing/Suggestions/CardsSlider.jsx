@@ -1,16 +1,16 @@
 import Slider from "react-slick";
 import CardSuggestions from "./CardSuggestions";
-import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
-import data from '../../utils/projects.json';
+import data from '../../../utils/projects.json';
+import './CardsSlider.css'
+import { Stack } from "@chakra-ui/react";
+import { ArrowNext, ArrowPrev } from "../../ArrowButton/ArrowButton";
 
 function PrevArrow(props) {
   const { onClick, currentSlide } = props;
   return (
     <>
       { currentSlide !== 0 &&
-        <div className="arrow prev-arrow" onClick={onClick}>
-          <ArrowBackIcon color="white" fontSize="24px"/>
-        </div>
+        <ArrowPrev right={"0"} translate={"translateX(-50%)"} onClick={onClick}/>
       }
     </>
   );
@@ -21,9 +21,7 @@ function NextArrow(props) {
   return (
     <>
       { currentSlide !== slideCount - 3 &&
-        <div className="arrow next-arrow" onClick={onClick}>
-          <ArrowForwardIcon  color="white" fontSize="24px"/>
-        </div>
+        <ArrowNext right={"0"} translate={"translateX(50%)"} onClick={onClick}/>
       }
     </>
   );
@@ -31,7 +29,6 @@ function NextArrow(props) {
 
 const CardsSlider = () => {
   var settings = {
-    className: 'hola',
     infinite: false,
     speed: 500,
     slidesToShow: 3,
@@ -58,7 +55,7 @@ const CardsSlider = () => {
     ]
   };
   return (
-    <div className="slider-container">
+    <Stack className="cards-slider" px={'30px'}>
       <Slider {...settings}>
         {data.slice(2, 6).map(card => {
           return(
@@ -73,7 +70,7 @@ const CardsSlider = () => {
           )
         })}
       </Slider>
-    </div>
+    </Stack>
   );
 }
 

@@ -1,7 +1,6 @@
 import { Image, Button, Heading, Grid, GridItem, Link, Icon, Center } from '@chakra-ui/react';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import { Link as ReactLink } from 'react-router-dom';
-import IntroImage from '../../../assets/introImage.jpeg';
 
 const IntroSection = () => {
   return (
@@ -19,9 +18,9 @@ const IntroSection = () => {
           h={'100%'}>
           <Heading
             color={'#333333'}
-            size={'4xl'}
+            fontSize='3.5vw'
             textAlign={'left'}>
-          Conéctate con innovación: Descubre y respalda proyectos digitales hoy
+            Conéctate con innovación: Descubre y respalda proyectos digitales hoy
           </Heading>
         </Center>
       </GridItem>
@@ -44,8 +43,15 @@ const IntroSection = () => {
       </GridItem>
       <GridItem
         colStart={2}
-        rowSpan={2}>
-        <Image h={'auto'} w={'100%'} objectFit={'cover'} alt="Intro Image" src={'https://img.freepik.com/foto-gratis/primer-plano-mano-presionando-pantalla_53876-101866.jpg?w=2000&t=st=1708729948~exp=1708730548~hmac=89191ca2dce66db6b10c6fc0338d587d6e66f0b7dabbde6aba1abdf5fd11da78'}/>
+        rowSpan={2}
+        aspectRatio={'16/9'}>
+        <Image
+          w={'100%'} h={'100%'}
+          objectFit={'cover'}
+          boxShadow={'2xl'}
+          alt="Intro Image" 
+          src={'https://img.freepik.com/foto-gratis/primer-plano-mano-presionando-pantalla_53876-101866.jpg?w=2000&t=st=1708729948~exp=1708730548~hmac=89191ca2dce66db6b10c6fc0338d587d6e66f0b7dabbde6aba1abdf5fd11da78'}
+        />
       </GridItem>
     </Grid>
   );

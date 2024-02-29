@@ -1,0 +1,11 @@
+.projects-slider{
+  .slick-slider{
+    overflow: hidden;
+    .slick-list{
+      margin-inline: -0.125rem;
+    }
+  }
+}
+.projects-slider:hover .slick-slider .arrow-button{
+  visibility: visible;
+}
