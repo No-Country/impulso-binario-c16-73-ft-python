@@ -1,5 +1,5 @@
 import { Divider, Flex, Container } from '@chakra-ui/react';
-import SearchBar from '../components/SearchBar/SearchBar';
+import SearchBar from '../components/Home/SearchBar/SearchBar';
 import ProjectList from '../components/Home/ProjectList/ProjectList';
 import Filters from '../components/Home/Filters/Filters';
 import Sort from '../components/Home/Sort/Sort';

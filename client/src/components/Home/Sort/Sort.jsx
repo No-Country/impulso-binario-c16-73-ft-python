@@ -1,15 +1,21 @@
 import { Heading, HStack, Select } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { BACKERS, EXPIRATION, FINANCED, NEWEST } from '../../../utils/constants';
+import { useSortProjects } from '../../../context/ProjectsContext';
 
 const sorts = [
-  { name: 'Más recientes', value: 'newest'},
-  { name: 'Más financiados', value: 'financed'},
-  { name: 'Mayor cantidad de apoyadores', value: 'backers'},
-  { name: 'Más próximos a expirar', value: 'expiration'},
+  { name: 'Más recientes', value: NEWEST},
+  { name: 'Más financiados', value: FINANCED},
+  { name: 'Mayor cantidad de apoyadores', value: BACKERS},
+  { name: 'Más próximos a expirar', value: EXPIRATION},
 ];
 
 const Sort = () => {
   const [sort, setSort] = useState('');
+  const useSort = useSortProjects();
+  useEffect(() => {
+    useSort(sort);
+  }, [sort]);
   return (
     <HStack justifyContent={'flex-end'} mb={'40px'}>
       <Heading size='xs'>Ordenar por:</Heading>

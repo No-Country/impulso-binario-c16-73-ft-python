@@ -11,3 +11,15 @@ export const calculateProgress = (amountCollected, collectionGoal) => {
   const progressPercentage = (validAmountCollected / validCollectionGoal) * 100;
   return Math.round(progressPercentage);
 };
+
+/**
+ * Retorna el porcentaje de X basado en Y.
+ * @param {number} date - La fecha de expiracion.
+ * @retorna {string} - Los dias restantes hasta esa fecha.
+ **/
+
+export const getDaysRemaining = (date) => {
+  const differenceInMilliseconds = date.getTime() - new Date().getTime();
+  const differenceInDays = Math.ceil(differenceInMilliseconds / (1000 * 60 * 60 * 24));
+  return `${differenceInDays} días`;
+};

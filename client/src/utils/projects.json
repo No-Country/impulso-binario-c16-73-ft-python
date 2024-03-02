@@ -1,8 +1,8 @@
 [{
   "id": 1,
-  "title": "Refined Granite Bacon",
+  "title": "React",
   "description": "Titulus vomer chirographum territo teres benigne deserunt rerum magnam torrens cilicium vos",
-  "expirationDate": "50 días",
+  "expirationDate": "2024-04-24",
   "mainImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png",
   "amountCollected": 10428.03,
   "progress": 33,
@@ -15,14 +15,17 @@
     "description": "Tendras el software listo para utilizar en Mac",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLaQG_JIob2jNKTkJ1NbbGYsX3Ev2xlVAlOw&usqp=CAU",
     "price": 20
-  }]
+  }],
+  "createdAt": "2024-01-05",
+  "languages": ["JavaScript"],
+  "backers": 21
 },{
   "id": 2,
-  "title": "Elegant Steel Keyboard",
+  "title": "Angular",
   "description": "Crebro coepi asporto thymbra tamquam occaecati conventus appello approbo quaerat solio dolor",
-  "expirationDate": "60 días",
+  "expirationDate": "2024-05-01",
   "mainImage": "https://angular.io/assets/images/logos/angular/angular.svg",
-  "amountCollected": 195815.95,
+  "amountCollected": 15815.95,
   "progress": 720,
   "user": {
     "name": "Gerson Bernier"
@@ -33,12 +36,15 @@
     "description": "Tendras el software listo para utilizar en Mac",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLaQG_JIob2jNKTkJ1NbbGYsX3Ev2xlVAlOw&usqp=CAU",
     "price": 60
-  }]
+  }],
+  "createdAt": "2024-01-12",
+  "languages": ["JavaScript", "TypeScript"],
+  "backers": 63
 },{
   "id": 3,
-  "title": "Practical Granite Pizza",
+  "title": "Vue.js",
   "description": "Coadunatio accusator clamo bos articulus averto cattus adficio depopulo tabernus textor aro alo.",
-  "expirationDate": "23 días",
+  "expirationDate": "2024-03-25",
   "mainImage": " https://vuejs.org/images/logo.png",
   "amountCollected": 24595.45,
   "progress": 25,
@@ -51,12 +57,15 @@
     "description": "Tendras el software listo para utilizar en Mac",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLaQG_JIob2jNKTkJ1NbbGYsX3Ev2xlVAlOw&usqp=CAU",
     "price": 50
-  }]
+  }],
+  "createdAt": "2024-02-02",
+  "languages": ["JavaScript"],
+  "backers": 4
 },{
   "id": 4,
-  "title": "Refined Concrete Bacon",
+  "title": "Ruby on Rails",
   "description": "Colo supellex cognomen careo ullam acervus rerum desidero celo benigne spargo.",
-  "expirationDate": "41 días",
+  "expirationDate": "2024-04-03",
   "mainImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Ruby_on_Rails-logo.png/600px-Ruby_on_Rails-logo.png",
   "amountCollected": 141705.34,
   "progress": 102,
@@ -69,12 +78,15 @@
     "description": "Tendras el software listo para utilizar en Mac",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLaQG_JIob2jNKTkJ1NbbGYsX3Ev2xlVAlOw&usqp=CAU",
     "price": 40
-  }]
+  }],
+  "createdAt": "2024-02-18",
+  "languages": ["Ruby"],
+  "backers": 73
 },{
   "id": 5,
-  "title": "Elegant Plastic Cheese",
+  "title": "Django Framework",
   "description": "Viridis consectetur arca ait cursus sapiente adhuc adversus coepi derelinquo umquam.",
-  "expirationDate": "13 días",
+  "expirationDate": "2024-03-10",
   "mainImage": " https://www.djangoproject.com/s/img/logos/django-logo-negative.png",
   "amountCollected": 37837.79,
   "progress": 543,
@@ -87,12 +99,15 @@
     "description": "Tendras el software listo para utilizar en Mac",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLaQG_JIob2jNKTkJ1NbbGYsX3Ev2xlVAlOw&usqp=CAU",
     "price": 10
-  }]
+  }],
+  "createdAt": "2024-02-23",
+  "languages": ["Python"],
+  "backers": 214
 },{
   "id": 6,
-  "title": "Luxurious Bronze Chips",
+  "title": "Spring Framework",
   "description": "Tenuis accommodo voveo patior amaritudo umerus talio vorago deleniti vulticulus deporto terga cetera universe.",
-  "expirationDate": "54 días",
+  "expirationDate": "2024-03-31",
   "mainImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/1200px-Spring_Framework_Logo_2018.svg.png",
   "amountCollected": 30190.16,
   "progress": 50,
@@ -105,12 +120,15 @@
     "description": "Tendras el software listo para utilizar en Mac",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLaQG_JIob2jNKTkJ1NbbGYsX3Ev2xlVAlOw&usqp=CAU",
     "price": 20
-  }]
+  }],
+  "createdAt": "2024-02-08",
+  "languages": ["Java", "Kotlin", "Scala"],
+  "backers": 24
 },{
   "id": 7,
-  "title": "Luxurious Plastic Cheese",
+  "title": "ExpressJs",
   "description": "Ullus degero degenero avaritia coruscus sursum aegrotatio depereo versus xiphias cerno agnitio cursus studio adhaero cognomen amor cometes supplanto.",
-  "expirationDate": "90 días",
+  "expirationDate": "2024-04-13",
   "mainImage": "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png",
   "amountCollected": 98069.48,
   "progress": 130,
@@ -123,12 +141,15 @@
     "description": "Tendras el software listo para utilizar en Mac",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLaQG_JIob2jNKTkJ1NbbGYsX3Ev2xlVAlOw&usqp=CAU",
     "price": 30
-  }]
+  }],
+  "createdAt": "2024-01-15",
+  "languages": ["JavaScript"],
+  "backers": 94
 },{
   "id": 8,
-  "title": "Handcrafted Cotton Bacon",
+  "title": "Flask",
   "description": "Solus armarium vigor vindico traho ea illum iusto iure ascisco capio tripudio tristis vinum comburo sui exercitationem voluptates.",
-  "expirationDate": "31 días",
+  "expirationDate": "2024-03-23",
   "mainImage": "https://flask.palletsprojects.com/en/2.1.x/_images/flask-logo.png",
   "amountCollected": 112529.34,
   "progress": 145,
@@ -141,12 +162,15 @@
     "description": "Tendras el software listo para utilizar en Mac",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLaQG_JIob2jNKTkJ1NbbGYsX3Ev2xlVAlOw&usqp=CAU",
     "price": 15
-  }]
+  }],
+  "createdAt": "2024-02-21",
+  "languages": ["Python"],
+  "backers": 42
 },{
   "id": 9,
-  "title": "Incredible Cotton Shirt",
+  "title": "Laravel",
   "description": "Solus armarium vigor vindico traho ea illum iusto iure ascisco capio tripudio tristis vinum comburo sui exercitationem voluptates.",
-  "expirationDate": "7 días",
+  "expirationDate": "2024-03-19",
   "mainImage": "https://laravel.com/img/logotype.min.svg",
   "amountCollected": 191635.21,
   "progress": 1116,
@@ -159,5 +183,8 @@
     "description": "Tendras el software listo para utilizar en Mac",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLaQG_JIob2jNKTkJ1NbbGYsX3Ev2xlVAlOw&usqp=CAU",
     "price": 10
-  }]
+  }],
+  "createdAt": "2024-02-29",
+  "languages": ["PHP", "SQL", "JavaScript"],
+  "backers": 148
 }]

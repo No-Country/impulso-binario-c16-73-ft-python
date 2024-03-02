@@ -13,22 +13,25 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { useState } from 'react';
+import { useFilterProjects } from '../../../context/ProjectsContext';
+import { LANGUAGES, COLLECTION, COMPLETE, INCOMPLETE } from '../../../utils/constants';
 
 const languages = {
-  languages: ['JavaScript', 'Python'],
+  languages: ['JavaScript', 'Java', 'Kotlin', 'PHP', 'Python', 'Ruby', 'Scala', 'SQL'],
 };
 
 const Filters = () => {
   const [filters, setFilters] = useState({
     programmingLanguage: '',
     price: {
-      min: '',
-      max: '',
+      min: 0,
+      max: 0,
     },
     progress: '',
   });
+  const useFilter = useFilterProjects();
   const handleFilterChange = (e) => {
-    setFilters({ ...filters, [e.target.name]: e.target.value });
+    useFilter({ type: LANGUAGES, value: e.target.value });
   };
 
   const handlePriceChange = (e) => {
@@ -62,6 +65,7 @@ const Filters = () => {
               _hover={{ borderColor: '#333333' }}
               onChange={handlePriceChange}
               name='min'
+              type='number'
               value={filters.price.min}/>
           </InputGroup>
           <InputGroup
@@ -72,6 +76,7 @@ const Filters = () => {
               _hover={{ borderColor: '#333333' }}
               onChange={handlePriceChange}
               name='max'
+              type='number'
               value={filters.price.max}/>
           </InputGroup>
           <Button
@@ -80,18 +85,30 @@ const Filters = () => {
             color={'white'}
             border={'1px'}
             borderRadius={63}
+            onClick={() => useFilter({ type: COLLECTION, value: filters.price})}
             _hover={{ backgroundColor: '#007BFF' }}>
             Buscar
           </Button>
         </VStack>
       </Stack>
       <Divider borderColor="#333333" my="20px" />
-      <RadioGroup onChange={handleFilterChange}>
+      <RadioGroup onChange={(value) => useFilter({ type: value })}>
         <Stack direction={'column'}>
-          <Radio value={'complete'}>Porcentaje mayor a 100%</Radio>
-          <Radio value={'incomplete'}>Porcentaje menor a 100%</Radio>
+          <Radio value={COMPLETE}>Porcentaje mayor a 100%</Radio>
+          <Radio value={INCOMPLETE}>Porcentaje menor a 100%</Radio>
         </Stack>
       </RadioGroup>
+      <Divider borderColor="#333333" my="20px" />
+      <Button
+        alignSelf={'flex-start'}
+        bgColor={'#007BFF'}
+        color={'white'}
+        border={'1px'}
+        borderRadius={63}
+        onClick={() => useFilter({ type: '' })}
+        _hover={{ backgroundColor: '#007BFF' }}>
+          Limpiar filtros
+      </Button>
     </Flex>
   );
 };
