@@ -18,7 +18,8 @@ const ProjectList = () => {
                 mainImage={el.mainImage}
                 progress={el.progress}
                 title={el.title}
-                user={el.user}/>
+                user={el.user}
+                languages={el.languages}/>
             </GridItem>
           ))
         }

@@ -17,7 +17,7 @@ import { useFilterProjects } from '../../../context/ProjectsContext';
 import { LANGUAGES, COLLECTION, COMPLETE, INCOMPLETE } from '../../../utils/constants';
 
 const languages = {
-  languages: ['JavaScript', 'Java', 'PHP', 'Python', 'Ruby', 'SQL'],
+  languages: ['JavaScript', 'Java', 'Kotlin', 'PHP', 'Python', 'Ruby', 'Scala', 'SQL'],
 };
 
 const Filters = () => {

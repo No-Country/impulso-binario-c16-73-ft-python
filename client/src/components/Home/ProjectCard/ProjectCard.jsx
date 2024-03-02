@@ -13,6 +13,7 @@ import {
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { getDaysRemaining } from '../../../utils/helpers';
+import { motion, useAnimation } from 'framer-motion';
 
 const ProjectCard = ({
   id,
@@ -23,7 +24,18 @@ const ProjectCard = ({
   amountCollected,
   progress,
   expirationDate,
+  languages,
 }) => {
+  const controls = useAnimation();
+
+  const handleHover = () => {
+    controls.start({ height: 'auto', opacity: 1 });
+  };
+
+  const handleLeave = () => {
+    controls.start({ height: 0, opacity: 0 });
+  };
+
   return (
     <Card p="0 12px" boxShadow="none">
       <CardBody>
@@ -36,24 +48,45 @@ const ProjectCard = ({
               boxSize="200px"
             />
           </Stack>
-          <Stack p="3" spacing='3'>
-            <Heading size='md' color="#333333">
-              <LinkOverlay as={Link} to={`/detail/${id}`}> {title} </LinkOverlay>
+          <Stack
+            p="3"
+            spacing="3"
+            onMouseEnter={handleHover}
+            onMouseLeave={handleLeave}
+          >
+            <Heading size="md" color="#333333">
+              <LinkOverlay as={Link} to={`/detail/${id}`}>
+                {title}
+              </LinkOverlay>
             </Heading>
-            <Text noOfLines={2} fontSize='lg' lineHeight="1.2" fontWeight="500" color="#333333">
+            <Text noOfLines={2} fontSize="lg" lineHeight="1.2" fontWeight="500" color="#333333">
               {description}
             </Text>
-            <Text fontSize='lg' fontWeight="400" as="i" color="#333333">
+            <Text fontSize="lg" fontWeight="400" as="i" color="#333333">
               {name}
             </Text>
+            <motion.div
+              animate={controls}
+              initial={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Heading size="sm">Lenguajes:</Heading>
+              <Stack direction="row" spacing={2}>
+                {languages.map((language, index) => (
+                  <Text key={index} fontSize="sm" bg="gray.200" px="2" py="1" borderRadius="md">
+                    {language}
+                  </Text>
+                ))}
+              </Stack>
+            </motion.div>
           </Stack>
         </LinkBox>
         <Stack px="3" spacing="2">
           <Flex alignItems="flex-end">
             <Text fontSize="xl" fontWeight="500" lineHeight="1.2">
-                ${amountCollected}
+              ${amountCollected}
             </Text>
-            <Spacer/>
+            <Spacer />
             <Text fontSize="md" fontWeight="400" lineHeight="1.2" as="i" color="#007bff">
               {progress}%
             </Text>
@@ -66,7 +99,7 @@ const ProjectCard = ({
             size="sm"
             value={progress}
           />
-          <Text fontSize="md" fontWeight="400" as="i" color="#333333" >
+          <Text fontSize="md" fontWeight="400" as="i" color="#333333">
             Quedan {getDaysRemaining(new Date(expirationDate))}
           </Text>
         </Stack>
