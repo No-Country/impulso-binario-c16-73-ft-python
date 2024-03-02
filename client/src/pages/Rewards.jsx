@@ -13,7 +13,7 @@ const Rewards = () => {
     getProject(id);
   }, []);
   return (
-    <Container p={0} mt='80px' maxW={'1800px'}>
+    <Container p={0} maxW={'1800px'}>
       <Header />
       <Flex justifyContent={'center'}>
         <RewardList />
