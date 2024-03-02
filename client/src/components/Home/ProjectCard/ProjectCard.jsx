@@ -12,6 +12,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
+import { getDaysRemaining } from '../../../utils/helpers';
 
 const ProjectCard = ({
   id,
@@ -66,7 +67,7 @@ const ProjectCard = ({
             value={progress}
           />
           <Text fontSize="md" fontWeight="400" as="i" color="#333333" >
-            Quedan {expirationDate}
+            Quedan {getDaysRemaining(new Date(expirationDate))}
           </Text>
         </Stack>
       </CardBody>
