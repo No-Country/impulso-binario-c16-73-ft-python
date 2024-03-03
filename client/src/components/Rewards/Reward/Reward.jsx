@@ -1,7 +1,8 @@
-import { Box, Button, Flex, Heading, Image, LinkBox, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Image, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
-const Reward = ({ projectId, title, description, price, image, expirationDate }) => {
+const Reward = (props) => {
+  const { projectId, title, description, price, image, expirationDate, handleSelection } = props;
   return (
     <Flex
       border={'1px'}
@@ -32,17 +33,16 @@ const Reward = ({ projectId, title, description, price, image, expirationDate })
             {expirationDate}
           </Heading>
         </Box>
-        <LinkBox>
-          <Button
-            bgColor={'#007BFF'}
-            borderRadius={30}
-            _hover={{ backgroundColor: '#007BFF' }}
-            p={'30px'}>
-            <Heading size={'md'} color={'white'} as={Link} to={`/project/${projectId}/checkout`}>
-              Elegir y pagar
-            </Heading>
-          </Button>
-        </LinkBox>
+        <Button
+          bgColor={'#007BFF'}
+          borderRadius={30}
+          _hover={{ backgroundColor: '#007BFF' }}
+          onClick={() => handleSelection({ title, description, price, image }, price)}
+          p={'30px'}>
+          <Heading size={'md'} color={'white'} as={Link} to={`/project/${projectId}/checkout`}>
+            Elegir y pagar
+          </Heading>
+        </Button>
       </Flex>
       <Flex>
         <Image borderRadius={30} src={image}/>
