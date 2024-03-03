@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { ProjectProvider } from './context/ProjectContext';
 import { ProjectsProvider } from './context/ProjectsContext';
 import { PaymentProvider } from './context/PaymentContext';
+import Checkout from './pages/Checkout';
 import Home from './pages/Home';
 import Landing from './pages/Landing';
 import NavBar from './components/NavBar/NavBar';
@@ -25,6 +26,9 @@ function App() {
         <Route
           path='/project/:id/rewards'
           element={<PaymentProvider><ProjectProvider><Rewards /></ProjectProvider></PaymentProvider>}/>
+        <Route
+          path='/project/:id/checkout'
+          element={<PaymentProvider><Checkout /></PaymentProvider>}/>
       </Routes>
     </>
   );
