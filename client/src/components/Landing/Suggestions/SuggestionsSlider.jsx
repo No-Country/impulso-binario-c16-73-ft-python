@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import CardSuggestions from "./CardSuggestions";
 import data from '../../../utils/projects.json';
-import './CardsSlider.css'
+import './SuggestionsSlider.css'
 import { Stack } from "@chakra-ui/react";
 import { ArrowNext, ArrowPrev } from "../../ArrowButton/ArrowButton";
 
@@ -10,7 +10,7 @@ function PrevArrow(props) {
   return (
     <>
       { currentSlide !== 0 &&
-        <ArrowPrev right={"0"} translate={"translateX(-50%)"} onClick={onClick}/>
+        <ArrowPrev left={"0"} translate={"translateX(-50%)"} onClick={onClick}/>
       }
     </>
   );
@@ -27,7 +27,7 @@ function NextArrow(props) {
   );
 }
 
-const CardsSlider = () => {
+const SuggestionsSlider = () => {
   var settings = {
     infinite: false,
     speed: 500,
@@ -57,7 +57,7 @@ const CardsSlider = () => {
   return (
     <Stack className="cards-slider" px={'30px'}>
       <Slider {...settings}>
-        {data.slice(2, 6).map(card => {
+        { data.slice(2, 6).map(card => {
           return(
             <CardSuggestions
               key={card}
@@ -74,4 +74,4 @@ const CardsSlider = () => {
   );
 }
 
-export default CardsSlider
+export default SuggestionsSlider

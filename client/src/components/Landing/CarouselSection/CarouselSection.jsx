@@ -8,7 +8,7 @@ const Carousels = () => {
   return (
     <Flex flexDir={'column'}>
       <Flex px={'30px'} py={'8'} mt={'8'}>
-        <Heading color={'#333333'}>Proyectos</Heading>
+        <Heading color={'#333333'} fontWeight='500'>Proyectos</Heading>
         <Link
           as={ReactLink}
           ml={'auto'}
