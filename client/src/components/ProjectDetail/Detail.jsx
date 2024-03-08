@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button, ButtonGroup, Container, Flex, Grid, GridItem, HStack, Heading, IconButton, Image, Progress, Stack, Text } from '@chakra-ui/react'
 import { CheckIcon } from '@chakra-ui/icons'
 import data from '../../utils/projects.json';
+import { getDaysRemaining } from '../../utils/helpers';
 
 function Detail() {
   const [project, setProject] = useState({});
@@ -13,7 +14,6 @@ function Detail() {
       setProject({});
     }
   }, [])
-
   return (
     <Container maxW='none' px='75px'>
       <Breadcrumb mt='8' mb='5' fontStyle='italic' color='#007bff'>
@@ -40,9 +40,13 @@ function Detail() {
         </GridItem>
         <GridItem display='grid' gridTemplateRows='auto 1fr' gap='10'>
           <Stack spacing='4'>
-            <Text as='h3' fontSize='2xl' lineHeight='1' color='#007bff'>
-              {'Categoría'}
-            </Text>
+            <HStack>
+              { project.languages?.length > 0 && project.languages.map((l, i) => (
+                <Text key={i} as='h3' fontSize='2xl' lineHeight='1' color='#007bff'>
+                  {l}
+                </Text>
+              ))}
+            </HStack>
             <Heading as='h2' fontWeight='500'>
               {project.title}
             </Heading>
@@ -63,7 +67,7 @@ function Detail() {
                   ${project.amountCollected}
                 </Text>
                 <Text fontSize='xl' fontStyle='italic'>
-                  {'N° de patrocinadores'}
+                  {`${project.backers} patrocinadores`}
                 </Text>
               </Flex>
               <Progress
@@ -79,7 +83,7 @@ function Detail() {
                   {project.progress}%
                 </Text>
                 <Text fontSize='xl' fontStyle='italic'>
-                  Quedan {project.expirationDate}
+                  Quedan {getDaysRemaining(new Date(project.expirationDate))}
                 </Text>
               </Flex>
               <Link to={`/project/${project.id}/rewards`}>
@@ -98,62 +102,20 @@ function Detail() {
             </Stack>
             <HStack mt='auto' spacing='4'>
               <Button
+                color={'white'}
                 px='8'
                 size='lg'
-                bgColor='#ffffff'
-                border='2px solid #333333'
+                bgColor='#007bff'
                 borderRadius='full'
                 fontSize='lg'
                 fontWeight='400'
                 leftIcon={<CheckIcon />}>
                 Guardar
               </Button>
-              <ButtonGroup spacing='2'>
-                <IconButton
-                  size='xs'
-                  isRound={true}
-                  variant='transparent'
-                  fontSize='16px'
-                  icon={<CheckIcon color='#333333'/>}
-                />
-                <IconButton
-                  size='xs'
-                  isRound={true}
-                  variant='transparent'
-                  fontSize='16px'
-                  icon={<CheckIcon color='#333333'/>}
-                />
-                <IconButton
-                  size='xs'
-                  isRound={true}
-                  variant='transparent'
-                  fontSize='16px'
-                  icon={<CheckIcon color='#333333'/>}
-                />
-                <IconButton
-                  size='xs'
-                  isRound={true}
-                  variant='transparent'
-                  fontSize='16px'
-                  icon={<CheckIcon color='#333333'/>}
-                />
-              </ButtonGroup>
             </HStack>
           </Stack>
         </GridItem>
       </Grid>
-      <HStack mt='4'>
-        <IconButton
-          size='xs'
-          isRound={true}
-          variant='transparent'
-          fontSize='16px'
-          icon={<CheckIcon color='#333333'/>}
-        />
-        <Text fontSize='lg' fontStyle='italic'>
-          {'Ubicación geografica'}
-        </Text>
-      </HStack>
     </Container>
   )
 }

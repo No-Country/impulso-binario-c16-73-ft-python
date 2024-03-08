@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { Box, Button, ButtonGroup, Flex, Grid, GridItem, HStack, Heading, IconButton, Image, Stack, Tab, TabIndicator, TabList, TabPanel, TabPanels, Tabs, Text } from '@chakra-ui/react'
 import data from '../../utils/projects.json';
+import Reward from '../Rewards/Reward/Reward';
 import { CheckIcon } from '@chakra-ui/icons';
 
 function ProjectTabs() {
@@ -24,8 +25,6 @@ function ProjectTabs() {
       <TabList gap='4'>
         <Tab fontSize='lg' px='9'>Campaña</Tab>
         <Tab fontSize='lg' px='9'>Recompensas</Tab>
-        <Tab fontSize='lg' px='9'>Preguntas frecuentes</Tab>
-        <Tab fontSize='lg' px='9'>Comentarios</Tab>
       </TabList>
       <TabIndicator
         mt='-1.5px'
@@ -106,13 +105,19 @@ function ProjectTabs() {
           </Grid>
         </TabPanel>
         <TabPanel>
-          <p>two!</p>
-        </TabPanel>
-        <TabPanel>
-          <p>three!</p>
-        </TabPanel>
-        <TabPanel>
-          <p>three!</p>
+          <Flex flexDir={'column'} gap={5}>
+            {
+              project.rewards?.length ? project.rewards.map((r, i) => (
+                <Reward
+                  key={i}
+                  title={r.title}
+                  description={r.description}
+                  price={r.price}
+                  image={r.image}
+                  projectId={project.id}/>
+              )) : <Heading>No hay recompensas disponibles</Heading>
+            }
+          </Flex>
         </TabPanel>
       </TabPanels>
     </Tabs>
