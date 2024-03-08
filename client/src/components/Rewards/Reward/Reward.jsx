@@ -33,7 +33,7 @@ const Reward = (props) => {
             {expirationDate}
           </Heading>
         </Box>
-        <Button
+        { handleSelection ? <Button
           bgColor={'#007BFF'}
           borderRadius={30}
           _hover={{ backgroundColor: '#007BFF' }}
@@ -42,7 +42,18 @@ const Reward = (props) => {
           <Heading size={'md'} color={'white'} as={Link} to={`/project/${projectId}/checkout`}>
             Elegir y pagar
           </Heading>
-        </Button>
+        </Button> :
+          <Button bg='#007BFF'
+            _hover={{ bg: '#007BFF' }}
+            color='white'
+            borderRadius='full'
+            size='lg'
+            fontSize='xl'
+            fontWeight='400'>
+            <Heading size={'md'} as={Link} to={`/project/${projectId}/rewards`}>
+            Elegir
+            </Heading>
+          </Button> }
       </Flex>
       <Flex>
         <Image borderRadius={30} src={image}/>

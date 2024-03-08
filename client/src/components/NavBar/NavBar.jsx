@@ -13,54 +13,31 @@ const NavBar = () => {
       pl={['30px', '30px', '60px']}
       pr={['30px', '30px', '60px']}
       alignItems={'center'}
+      justifyContent={'space-between'} /* Keep for horizontal alignment */
       zIndex="200"
       bg="white"
       boxShadow="lg"
     >
-      <HStack spacing={'40px'}>
-        <Link color={'#4D94FF'} to={'/about'} as={ReactLink}>
-          Nosotros
-        </Link>
-        <Button
-          color={'#007BFF'}
-          bgColor={'white'}
-          border={'2px'}
-          borderRadius={63}
-          _hover={{ backgroundColor: 'white' }}>
-          <Link to={'/project/create'} as={ReactLink}>
-          Crea un proyecto
-          </Link>
-        </Button>
+      <HStack>
+        {/* Center the Heading within the HStack */}
+        <Heading color={'#007BFF'} mx="auto">
+          <ReactLink textDecoration={'none'} to={'/'}>
+            Impulso Binario
+          </ReactLink>
+        </Heading>
       </HStack>
-      <Heading color={'#007BFF'} mx="auto">
-        <ReactLink textDecoration={'none'} to={'/'}>
-          Impulso Binario
-        </ReactLink>
-      </Heading>
       <HStack spacing={'40px'}>
         <Button
           color={'#007BFF'}
           bgColor={'white'}
           border={'2px'}
           borderRadius={63}
-          _hover={{ backgroundColor: 'white' }}>
+          _hover={{ backgroundColor: 'white' }}
+        >
           <Link to={'/home'} as={ReactLink}>
             Búsqueda
           </Link>
         </Button>
-        <Button
-          bgColor={'#007BFF'}
-          color={'white'}
-          border={'1px'}
-          borderRadius={63}
-          _hover={{ backgroundColor: '#007BFF' }}>
-          <Link to={'/register'} as={ReactLink}>
-            Registrarme
-          </Link>
-        </Button>
-        <Link color={'#4D94FF'} to={'/login'} as={ReactLink}>
-          Ingresar
-        </Link>
       </HStack>
     </Flex>
   );

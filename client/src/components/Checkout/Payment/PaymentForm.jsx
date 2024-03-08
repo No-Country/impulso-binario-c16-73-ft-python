@@ -1,17 +1,26 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, Flex, Heading, Spinner, useToast } from '@chakra-ui/react';
 import {
   PaymentElement,
   useElements,
 } from '@stripe/react-stripe-js';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useProjects } from '../../../context/ProjectsContext';
+import { usePayment } from '../../../context/PaymentContext';
+import { useUser } from '../../../context/UserContext';
 
 const PaymentForm = () => {
   const elements = useElements();
   const toast = useToast();
   const navigate = useNavigate();
+  const { payment: { total } } = usePayment();
   const { id } = useParams();
+  const { setProjects, projects } = useProjects();
+  const { setFinancedProjects } = useUser();
   const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    console.log(projects.find((p) => p.id == id));
+  }, projects);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -32,6 +41,19 @@ const PaymentForm = () => {
       });
       setLoading(false);
       paymentElement.clear();
+      const updatedProjects = projects.map((p) =>{
+        if (parseInt(id) === p.id) {
+          const newAmount = p.amountCollected + parseInt(total);
+          return {
+            ...p,
+            amountCollected: newAmount,
+            backers: p.backers++,
+          };
+        }
+        return p;
+      });
+      setProjects(updatedProjects);
+      setFinancedProjects((oldState) => oldState.concat([updatedProjects.find((p) => p.id === parseInt(id))]));
       setTimeout(() => {
         navigate('/user/dashboard');
       }, 3500);

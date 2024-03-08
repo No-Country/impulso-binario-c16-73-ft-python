@@ -17,7 +17,7 @@ const PaymentInfo = () => {
         </Text>
       </Flex>
       <Flex>
-        <Image borderRadius={30} boxSize="200px" src={payment.project.mainImage}/>
+        <Image borderRadius={30} objectFit={'contain'} boxSize="200px" src={payment.project.mainImage}/>
         <Flex flexDir={'column'} justifyContent={'center'}>
           <Heading size={'sm'}>{payment.project.title}</Heading>
           <Text>{payment.project.progress}% financiado</Text>

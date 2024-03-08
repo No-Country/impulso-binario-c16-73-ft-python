@@ -2,7 +2,9 @@ import { Route, Routes } from 'react-router-dom';
 import { ProjectProvider } from './context/ProjectContext';
 import { ProjectsProvider } from './context/ProjectsContext';
 import { PaymentProvider } from './context/PaymentContext';
+import { UserProvider } from './context/UserContext';
 import Checkout from './pages/Checkout';
+import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
 import Landing from './pages/Landing';
 import NavBar from './components/NavBar/NavBar';
@@ -13,23 +15,34 @@ function App() {
   return (
     <>
       <NavBar />
-      <Routes>
-        <Route
-          path="/"
-          element={<Landing />}/>
-        <Route
-          path='/home'
-          element={<ProjectsProvider><Home /></ProjectsProvider>}/>
-        <Route
-          path="/detail/:id"
-          element={<ProjectProvider><ProjectDetail /></ProjectProvider>}/>
-        <Route
-          path='/project/:id/rewards'
-          element={<PaymentProvider><ProjectProvider><Rewards /></ProjectProvider></PaymentProvider>}/>
-        <Route
-          path='/project/:id/checkout'
-          element={<PaymentProvider><Checkout /></PaymentProvider>}/>
-      </Routes>
+      <PaymentProvider>
+        <UserProvider>
+          <ProjectProvider>
+            <ProjectsProvider>
+              <Routes>
+                <Route
+                  path="/"
+                  element={<Landing />}/>
+                <Route
+                  path='/home'
+                  element={<Home />}/>
+                <Route
+                  path="/detail/:id"
+                  element={<ProjectDetail />}/>
+                <Route
+                  path='/project/:id/rewards'
+                  element={<Rewards />}/>
+                <Route
+                  path='/project/:id/checkout'
+                  element={<Checkout />}/>
+                <Route
+                  path='/user/dashboard'
+                  element={<Dashboard />}/>
+              </Routes>
+            </ProjectsProvider>
+          </ProjectProvider>
+        </UserProvider>
+      </PaymentProvider>
     </>
   );
 }

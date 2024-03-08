@@ -5,8 +5,7 @@ import data from '../utils/projects.json';
 const ProjectsContext = createContext(null);
 
 export const ProjectsProvider = ({ children }) => {
-  const [projects, setProjects] = useState(data);
-
+  const [projects, setProjects] = useState(data.slice(0, data.length - 2));
   return (
     <ProjectsContext.Provider value={{
       projects: projects,

@@ -34,7 +34,7 @@ function ProjectDetail() {
       <SuggestionsSlider />
       <Footer />
     </>
-  )
+  );
 }
 
-export default ProjectDetail
+export default ProjectDetail;
