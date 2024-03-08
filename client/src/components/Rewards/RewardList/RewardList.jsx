@@ -36,7 +36,7 @@ const RewardList = () => {
         Selecciona tu recompensa
       </Heading>
       <CustomContribution handleSelection={handleSelection}/>
-      <Flex>
+      <Flex flexDir={'column'} gap={5}>
         {
           project.rewards?.length > 0 && project.rewards.map((r) => (
             <Reward

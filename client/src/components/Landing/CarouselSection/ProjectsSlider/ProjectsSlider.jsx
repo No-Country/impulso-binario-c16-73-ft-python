@@ -28,8 +28,6 @@ const ProjectsSlider = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
     responsive: [
       {
         breakpoint: 600,

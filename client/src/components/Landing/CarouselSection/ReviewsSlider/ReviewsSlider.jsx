@@ -9,16 +9,6 @@ const reviews = [
   { user: 'Sandra Sanchez', comment: 'Gracias a Impulso Binario, mi sueño de desarrollar una innovadora aplicación se hizo realidad.' }
 ];
 
-function PrevArrow(props) {
-  const { onClick } = props;
-  return <ArrowPrev left={"1%"} onClick={onClick}/>
-}
-
-function NextArrow(props) {
-  const { onClick } = props;
-  return <ArrowNext right={"1%"} onClick={onClick}/>
-}
-
 const ReviewsSlider = () => {
   var settings = {
     dots: true,
@@ -27,11 +17,9 @@ const ReviewsSlider = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
     appendDots: dots => (
       <Box position={"absolute"} bottom={"5%"}>
-        <List display={"flex"} gap={8}>
+        <List display={"flex"} justifyContent={'center'} gap={8}>
           {dots}
         </List>
       </Box>

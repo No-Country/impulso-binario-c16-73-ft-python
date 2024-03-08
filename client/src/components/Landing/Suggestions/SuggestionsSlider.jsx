@@ -34,8 +34,6 @@ const SuggestionsSlider = () => {
     slidesToShow: 3,
     slidesToScroll: 3,
     initialSlide: 0,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
     responsive: [
       {
         breakpoint: 600,

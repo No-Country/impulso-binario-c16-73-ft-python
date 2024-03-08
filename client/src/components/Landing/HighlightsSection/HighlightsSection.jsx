@@ -38,7 +38,7 @@ const Highlights = () => {
           rowStart={1}
           rowEnd={1}>
           <Flex flexDir={'column'} height={'100%'} px={'7'} py={'2.5'} gap={3}>
-            <Heading color={'#333333'} size={'xl'}>Svelte</Heading>
+            <Heading color={'#333333'} size={'xl'}>Holo Gram</Heading>
             <Heading color={'#007BFF'} fontWeight={'500'} size={'md'}>67% Financiado</Heading>
             <Heading fontWeight={'normal'} size={'md'} fontStyle={'italic'}>Por: Jane Doe</Heading>
             <Link
@@ -55,7 +55,7 @@ const Highlights = () => {
           rowStart={2}
           rowEnd={2}>
           <Flex flexDir={'column'} height={'100%'} px={'7'} py={'2.5'} gap={5}>
-            <Heading color={'#333333'} size={'xl'}>Django Framework</Heading>
+            <Heading color={'#333333'} size={'xl'}>Un Touch</Heading>
             <Heading color={'#007BFF'} fontWeight={'500'} size={'md'}>86% Financiado</Heading>
             <Heading fontWeight={'normal'} size={'md'} fontStyle={'italic'}>Por: John Doe</Heading>
             <Link
