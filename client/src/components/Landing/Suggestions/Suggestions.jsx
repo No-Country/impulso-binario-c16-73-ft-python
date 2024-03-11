@@ -9,12 +9,13 @@ const Suggestions = () => {
       <Flex px={'30px'} py={'8'} mt={'8'}>
         <Heading color={'#333333'} fontWeight='500'>Recomendaciones</Heading>
         <Link
-          as={ReactLink}
           ml={'auto'}
+          color={'#007BFF'}
           bgColor={'white'}
+          fontWeight={'400'}
           alignSelf={'center'}
-          color={'#007BFF'}>
-          {<Icon as={ArrowForwardIcon}/>} Ver todos
+          as={ReactLink}>
+          {<Icon as={ArrowForwardIcon} fontSize={'xl'}/>} Ver todos
         </Link>
       </Flex>
       <SuggestionsSlider />

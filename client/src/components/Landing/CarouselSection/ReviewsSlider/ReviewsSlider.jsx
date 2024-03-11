@@ -9,6 +9,16 @@ const reviews = [
   { user: 'Sandra Sanchez', comment: 'Gracias a Impulso Binario, mi sueño de desarrollar una innovadora aplicación se hizo realidad.' }
 ];
 
+function PrevArrow(props) {
+  const { onClick } = props;
+  return <ArrowPrev left={"1%"} onClick={onClick}/>
+}
+
+function NextArrow(props) {
+  const { onClick } = props;
+  return <ArrowNext right={"1%"} onClick={onClick}/>
+}
+
 const ReviewsSlider = () => {
   var settings = {
     dots: true,
@@ -17,6 +27,8 @@ const ReviewsSlider = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
+    prevArrow: <PrevArrow/>,
+    nextArrow: <NextArrow/>,
     appendDots: dots => (
       <Box position={"absolute"} bottom={"5%"}>
         <List display={"flex"} justifyContent={'center'} gap={8}>
@@ -48,12 +60,12 @@ const ReviewsSlider = () => {
               <Flex
                 maxW={'50%'}
                 flexDir={'column'}
-                transition={'transform 0.3s ease-in-out'}
+                transition={'transform 0.2s ease-in-out'}
                 _hover={{ transform: 'scale(1.1)' }}>
-                <Heading color={'#ffffff'} fontWeight={'200'}>
+                <Heading color={'#ffffff'} size={'lg'} fontWeight={'200'}>
                   {review.user}
                 </Heading>
-                <Heading color={'#ffffff'}>
+                <Heading color={'#ffffff'} size={'xl'} fontWeight={'400'}>
                   {review.comment}
                 </Heading>
               </Flex>

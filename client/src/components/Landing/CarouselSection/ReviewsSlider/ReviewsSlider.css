@@ -1,5 +1,7 @@
 .reviews-slider{
   .slick-slider{
+    display: flex;
+    align-items: center;
     overflow: hidden;
     .slick-list{
       height: 100%;
