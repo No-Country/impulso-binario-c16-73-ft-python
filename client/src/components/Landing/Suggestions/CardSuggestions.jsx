@@ -15,11 +15,13 @@ const CardSuggestions = ({ title, image, imageAlt, description, userName }) => {
           border={'1px inset black'}
         />
         <Stack p="3" spacing='3'>
-          <Heading size='md' color="#333333">{title}</Heading>
-          <Text fontSize='lg' lineHeight="1.2" fontWeight="500" color="#333333">
+          <Heading fontSize='xl' fontWeight='500' color="#333333">
+            {title}
+          </Heading>
+          <Text fontSize='md' fontWeight='400' lineHeight="1.3" color="#333333">
             {description}
           </Text>
-          <Text fontSize='lg' fontWeight="400" as="i" color="#333333">
+          <Text fontSize='md' fontWeight="300" as="i" color="#333333">
             {userName}
           </Text>
         </Stack>

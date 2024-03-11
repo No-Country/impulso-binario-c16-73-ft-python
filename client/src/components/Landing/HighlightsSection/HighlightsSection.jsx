@@ -8,7 +8,7 @@ const link2 = 'https://img.freepik.com/foto-gratis/alegre-empresaria-laptop-mira
 const Highlights = () => {
   return (
     <Flex flexDirection={'column'} w={'100%'} mt='8'>
-      <Heading color={'#333333'} px='30px' py='8'>
+      <Heading color={'#333333'} fontWeight={'500'} px='30px' py='8'>
         Proyectos destacados
       </Heading>
       <Grid
@@ -37,16 +37,18 @@ const Highlights = () => {
           colEnd={2}
           rowStart={1}
           rowEnd={1}>
-          <Flex flexDir={'column'} height={'100%'} px={'7'} py={'2.5'} gap={3}>
-            <Heading color={'#333333'} size={'xl'}>Holo Gram</Heading>
-            <Heading color={'#007BFF'} fontWeight={'500'} size={'md'}>67% Financiado</Heading>
-            <Heading fontWeight={'normal'} size={'md'} fontStyle={'italic'}>Por: Jane Doe</Heading>
+          <Flex flexDir={'column'} height={'100%'} px={'8'} py={'10'} gap={2}>
+            <Heading color={'#333333'} fontWeight={'500'} size={'lg'}>Holo Gram</Heading>
+            <Heading color={'#007BFF'} fontWeight={'400'} size={'md'}>67% Financiado</Heading>
+            <Heading fontStyle={'italic'} fontWeight={'300'} size={'sm'}>Por: Jane Doe</Heading>
             <Link
-              mt={'auto'}
-              fontWeight={'bold'}
-              fontSize={'1em'}
               color={'#4D94FF'}
-              as={ReactLink}> {<Icon fontSize={'1.5em'} as={ArrowForwardIcon} mx='10px'/>} Ver más </Link>
+              fontSize={'md'}
+              fontWeight={'400'}
+              mt={'auto'}
+              as={ReactLink}>
+              {<Icon fontSize={'2xl'} as={ArrowForwardIcon} mx='10px'/>} Ver más
+            </Link>
           </Flex>
         </GridItem>
         <GridItem
@@ -54,16 +56,18 @@ const Highlights = () => {
           colEnd={1}
           rowStart={2}
           rowEnd={2}>
-          <Flex flexDir={'column'} height={'100%'} px={'7'} py={'2.5'} gap={5}>
-            <Heading color={'#333333'} size={'xl'}>Un Touch</Heading>
-            <Heading color={'#007BFF'} fontWeight={'500'} size={'md'}>86% Financiado</Heading>
-            <Heading fontWeight={'normal'} size={'md'} fontStyle={'italic'}>Por: John Doe</Heading>
+          <Flex flexDir={'column'} height={'100%'} px={'8'} py={'10'} gap={2}>
+            <Heading color={'#333333'} fontWeight={'500'} size={'lg'}>Un Touch</Heading>
+            <Heading color={'#007BFF'} fontWeight={'400'} size={'md'}>86% Financiado</Heading>
+            <Heading fontStyle={'italic'} fontWeight={'300'} size={'sm'}>Por: John Doe</Heading>
             <Link
-              mt={'auto'}
-              fontWeight={'bold'}
-              fontSize={'1em'}
               color={'#4D94FF'}
-              as={ReactLink}> {<Icon fontSize={'1.5em'} as={ArrowForwardIcon} mx='10px'/>} Ver más </Link>
+              fontSize={'md'}
+              fontWeight={'400'}
+              mt={'auto'}
+              as={ReactLink}>
+              {<Icon fontSize={'2xl'} as={ArrowForwardIcon} mx='10px'/>} Ver más
+            </Link>
           </Flex>
         </GridItem>
         <GridItem

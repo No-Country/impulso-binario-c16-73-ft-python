@@ -7,7 +7,7 @@ function Footer() {
       <Grid templateColumns="1fr 1fr">
         <GridItem>
           <Stack color={'#007BFF'}>
-            <Text fontSize="lg" pl="4">
+            <Text fontSize="md" pl="4">
               Mantente al día
             </Text>
             <InputGroup size="md" w="md" border="1px solid #007BFF" borderRadius="full" overflow="hidden">
@@ -19,48 +19,48 @@ function Footer() {
               <InputRightAddon
                 children="Suscríbete"
                 border="none"
-                fontSize="lg"
+                fontSize="md"
                 background="none"
                 cursor="pointer"
               />
             </InputGroup>
-            <Text fontSize="lg" pl="4">
+            <Text fontSize="md" pl="4">
               Suscríbete para recibir novedades al instante
             </Text>
           </Stack>
         </GridItem>
         <GridItem>
-          <Flex justifyContent="space-around" color={'#007BFF'}>
+          <Flex color="#007BFF" justifyContent="flex-end" gap="16">
             <List>
-              <ListItem fontSize="2xl" fontWeight="500">
+              <ListItem fontSize="xl" fontWeight="500" mb="2">
                 Soporte
               </ListItem>
-              <ListItem fontSize="lg">Preguntas frecuentes</ListItem>
-              <ListItem fontSize="lg">Contacto</ListItem>
+              <ListItem fontSize="md">Preguntas frecuentes</ListItem>
+              <ListItem fontSize="md">Contacto</ListItem>
             </List>
             <List>
-              <ListItem fontSize="2xl" fontWeight="500">
+              <ListItem fontSize="xl" fontWeight="500" mb="2">
                 Sobre nosotros
               </ListItem>
-              <ListItem fontSize="lg">Nuestra historia</ListItem>
+              <ListItem fontSize="md">Nuestra historia</ListItem>
             </List>
             <List>
-              <ListItem fontSize="2xl" fontWeight="500">
+              <ListItem fontSize="xl" fontWeight="500" mb="2">
                 Social
               </ListItem>
-              <ListItem fontSize="lg">Instagram</ListItem>
-              <ListItem fontSize="lg">Facebook</ListItem>
-              <ListItem fontSize="lg">Twitter</ListItem>
-              <ListItem fontSize="lg">LinkedIn</ListItem>
+              <ListItem fontSize="md">Instagram</ListItem>
+              <ListItem fontSize="md">Facebook</ListItem>
+              <ListItem fontSize="md">Twitter</ListItem>
+              <ListItem fontSize="md">LinkedIn</ListItem>
             </List>
           </Flex>
         </GridItem>
       </Grid>
-      <Flex justifyContent="space-between" mt="24" color={'#007BFF'}>
+      <Flex color="#007BFF" justifyContent="space-between" mt="24">
         <Text>
           Impulso binario 2024
         </Text>
-        <List display="flex" gap="6">
+        <List display="flex" gap="10">
           <ListItem>Política de privacidad</ListItem>
           <ListItem>Términos de uso</ListItem>
         </List>
